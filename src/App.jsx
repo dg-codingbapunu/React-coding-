@@ -1,24 +1,42 @@
+// Simple counter
+
 import React, { useState } from "react";
 
 const App = () => {
   const [count, setCount] = useState(0);
-
-  const Increment = () => {
+  const handleIncrement = () => {
     setCount(count + 1);
   };
-  const decrement = () => {
+  const handledecrement = () => {
     setCount(count - 1);
   };
-  const Reset = () => {
+  const handleReset = () => {
     setCount(0);
   };
-  return (
-    <div className="counter">
-      <h1>COUNTER:{count}</h1>
 
-      <button onClick={Increment}>increment</button>
-      <button onClick={decrement}>Decrement</button>
-      <button onClick={Reset}>Reset</button>
+  return (
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h1>Counter: {count}</h1>
+      <div>
+        <button
+          onClick={handleIncrement}
+          style={{ margin: "5px", padding: "5px", borderRadius: "3px" }}
+        >
+          Increase
+        </button>
+        <button
+          onClick={handleReset}
+          style={{ margin: "5px", padding: "5px", borderRadius: "3px" }}
+        >
+          Reset
+        </button>
+        <button
+          onClick={handledecrement}
+          style={{ margin: "5px", padding: "5px", borderRadius: "3px" }}
+        >
+          Decrease
+        </button>
+      </div>
     </div>
   );
 };
