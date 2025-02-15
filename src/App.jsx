@@ -1,18 +1,14 @@
-// useEffect
-import React, { useEffect, useState } from "react";
+import React, { createContext } from "react";
+import EmployData from "./EmployData";
 
+export const LoginContext = createContext();
 const App = () => {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    document.title = `${count} new Messages!`;
-  }, []);
-
   return (
-    <div>
-      <h3> {count} New Message!</h3>
-      <button onClick={() => setCount(count + 1)}>Increase</button>
-    </div>
+    <LoginContext.Provider value={true}>
+      <div>
+        <EmployData />
+      </div>
+    </LoginContext.Provider>
   );
 };
 
